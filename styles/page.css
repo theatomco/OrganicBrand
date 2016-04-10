@@ -1,0 +1,140 @@
+.page {
+	position: absolute;
+	width: 3000px;
+	/*height: 100%;*/
+	min-height: 100%;
+}
+
+.page > .fill {
+	display: inline-block;
+	/*position: absolute;*/
+	/*top: 0px;*/
+	/*left: 0px;*/
+	background-color: lime;
+	width: 250px;
+	height: 500px;
+	vertical-align: middle;
+}
+
+.page > .slide-one {
+	display: inline-block;
+	/*position: absolute;*/
+	/*top: 0px;*/
+	/*left: 300px;*/
+	background: red;
+	width: 900px;
+	height: 900px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .right-col {
+	display: inline-block;
+	background: aqua;
+	width: 450px;
+	height: 900px;
+	/*vertical-align: middle;*/
+	vertical-align: bottom;
+}
+
+.page > .slide-one > .right-col > .rotatehint {
+	display: block;
+	background: black;
+	width: 50px;
+	height: 50px;
+	margin: 0px auto;
+	margin-top: 10px;
+}
+
+.page > .slide-one > .right-col > .product {
+	display: block;
+	background: gray;
+	width: 400px;
+	height: 750px;
+	margin: 0px auto;
+	margin-top: 10px;
+}
+
+.page > .slide-one > .right-col > .buy {
+	display: block;
+	background: yellow;
+	width: 125px;
+	height: 50px;
+	margin: 0px auto;
+	margin-top: 25px;
+}
+
+.page > .slide-one > .left-col {
+	position: relative;
+	display: inline-block;
+	background: pink;
+	width: 425px;
+	height: 800px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > .features {
+	display: block;
+	background: white;
+	/*width: 425px;*/
+	/*height: 50px;*/
+	margin: 0px auto;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > .ingridient {
+	display: block;
+	position: absolute;
+	/*top: 50px;*/
+	bottom: 0px;
+	/*left: 15px;*/
+	background: gray;
+	width: 425px;
+	height: 300px;
+	margin-top: 100px;
+}
+
+.page > .vertical-line {
+	display: inline-block;
+	background: blue;
+	width: 10px;
+	height: 250px;
+	vertical-align: middle;
+}
+
+.page > .slide-two {
+	display: inline-block;
+	background: red;
+	width: 900px;
+	height: 300px;
+	vertical-align: middle;
+}
+
+.page > .slide-two > .about {
+	display: block;
+	width: 900px;
+}
+
+.page > .slide-two > .about > .card {
+	display: inline-block;
+	/*background: lime;*/
+	width: 250px;
+	height: 150px;
+	margin: 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.page > .slide-two > .about > .card > .front {
+	background-color: white;
+}
+
+.page > .slide-two > .about > .card > .back {
+	background-color: lime;
+}
+
+.page > .horizontal-line {
+	display: block;
+	background: orange;
+	width: 2500px;
+	height: 10px;
+}

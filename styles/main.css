@@ -5,4 +5,14 @@
 
 body {
 	font-family: sans-serif;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+div {
+	display: block;
+}
+
+ul {
+	list-style: none;
 }
