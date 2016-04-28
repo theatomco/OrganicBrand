@@ -1,0 +1,34 @@
+<form action="mail" method="get">
+	<input type="hidden" name="form" value="pay">
+	<div class="field">
+		<span>Имя</span>
+		<input type="text" name="firstname" placeholder="Иван" required>
+	</div>
+	<div class="field">
+		<span>Фамилия</span>
+		<input type="text" name="lastname" placeholder="Иванов" required>
+	</div>
+	<div class="field">
+		<span>Номер телефона</span>
+		<input type="tel" name="telephone" placeholder="+7 (900) 123 45 67" required>
+	</div>
+	<div class="field">
+		<span>Адрес электронной почты</span>
+		<input type="email" name="email" placeholder="myemail@site.com" required>
+	</div>
+	<div class="field">
+		<span>Количество</span>
+		<input type="number" name="amount" min="1" max="999" value="1" required>
+	</div>
+	<div class="field">
+		<span>Адрес доставки</span>
+		<input type="text" name="address" placeholder="г. Москва, Кутузовский проспект 500, кв. 5, индекс 100001" required>
+	</div>
+	<div class="field delivery">
+		<span>Курьером</span>
+		<input type="radio" name="delivery" value="courier" checked>
+		<span>Почтой</span>
+		<input type="radio" name="delivery" value="post">
+	</div>
+	<input type="button" value="Перейти к оплате" id="paytomail" onclick="pay();">
+</form>

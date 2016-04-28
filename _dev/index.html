@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="author" content="http://raReklamist.ru/">
+	<meta name="author" content="http://Tamik.ru/">
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="Organic Brand отбирает по всему миру самые качественные ингредиенты и производит натуральную косметику вручную, с теплом и заботой о Вашем теле.">
+	<meta name="keywords" content="organic, органик, натуральная косметика, органическая еда, крафт косметика, ручная косметика, скрабы, скраб, кофе, кофе скраб, кофейный скраб, натуральные масла, масло миндаля, антицеллюлитный скраб">
+	<meta property="og:title" content="Organic Brand">
+	<meta property="og:description" content="Мы отбираем по всему миру самые качественные ингредиенты и производим натуральную косметику вручную, с теплом и заботой о Вашем теле.">
+	<meta property="og:image" content="/native/og_image.png">
+	<meta property="og:url" content="http://OrganicBrand.ru/">
+	<!-- <meta name="theme-color" content="#7C852C"> -->
+	<!-- <meta name="mobile-web-app-capable" content="yes"> -->
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+	<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+	<!-- <meta name="apple-touch-icon" href="/native/icon.png"> -->
+	<title>Organic Brand</title>
+	<link rel="icon" href="/native/favicon.ico">
+	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" href="/styles/load.css">
+	<link rel="stylesheet" href="/styles/update.css">
+	<link rel="stylesheet" href="/styles/page.css">
+	<link rel="stylesheet" href="/styles/payform.css">
+	<script src="http://cdn.Tamik.ru/storage/libs/jquery.js"></script>
+	<script src="/js/mousewheel.js"></script>
+	<script src="/js/collapse.js"></script>
+	<script src="/js/spritespin.js"></script>
+	<script src="/js/flip.js"></script>
+	<script src="/js/main.js"></script>
+</head>
+<body>
+	<div class="update" style="display: none;">
+		<div class="object">
+			<h1>Доступно обновление</h1>
+			<span>Organic Brand всегда использует современные технологии для своих клиентов, и мы своевременно адаптируем сайт под них. :)</span>
+			<button onclick="installUpdate();">Обновить</button>
+		</div>
+	</div>
+	<div class="loading" style="display: none;">
+		<div class="object">
+			<div class="logo"></div>
+			<span class="loading-text">Загрузка</span>
+			<div class="description"></div>
+			<button class="enter" onclick="openStore();"></button>
+			<noscript>
+				<div class="badbrowser">Данный браузер не поддерживается.</div>
+			</noscript>
+		</div>
+	</div>
+	<div class="payform">
+		<div class="fade" onclick="closePayForm();"></div>
+		<div class="list">
+			<div class="close" onclick="closePayForm();"><span>x</span></div>
+			<div class="form">
+				<!-- <h1>Здесь будет форма для оплаты.<small>А может и нет.</small></h1> -->
+				<form action="#" method="get">
+					<div class="field">
+						<span>Имя</span>
+						<input type="text" name="firstname" placeholder="Иван" required>
+					</div>
+					<div class="field">
+						<span>Фамилия</span>
+						<input type="text" name="lastname" placeholder="Иванов" required>
+					</div>
+					<div class="field">
+						<span>Номер телефона</span>
+						<input type="tel" name="telephone" placeholder="+7 (900) 123 45 67" required>
+					</div>
+					<div class="field">
+						<span>Адрес электронной почты</span>
+						<input type="email" name="email" placeholder="myemail@site.com" required>
+					</div>
+					<div class="field">
+						<span>Количество</span>
+						<input type="number" min="1" max="999" value="1" required>
+					</div>
+					<div class="field">
+						<span>Адрес доставки</span>
+						<input type="text" name="address" placeholder="г. Москва, Кутузовский проспект 574, кв. 5, индекс 100001" required>
+					</div>
+					<div class="field deliver">
+						<span>Курьером</span>
+						<input type="radio" name="deliver" value="courier" checked>
+						<span>Почтой</span>
+						<input type="radio" name="deliver" value="post">
+					</div>
+					<input type="submit" value="Перейти к оплате">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="page">
+		<div class="pattern"></div>
+		<div class="slide-one">
+			<div class="right-col">
+				<div class="rotatehint"></div>
+				<div class="product"></div>
+				<button type="button" class="buy" onclick="showPayForm();">Купить</button>
+			</div>
+			<div class="left-col">
+				<div class="features">
+					<h2 class="open" onmouseenter="showIngridient('naturalcoffee');"><div class="feature" id="dots"></div> Натуральный бразильский кофе</h2>
+					<div>
+						<ul>
+							<li>Очищает кожу от ороговевших клеток</li>
+							<li>Открывает поры</li>
+							<li>Выводит из организма токсины</li>
+							<li>Улучшает циркуляцию крови</li>
+						</ul>
+					</div>
+					<h2 onmouseenter="showIngridient('canesugar');"><div class="feature" id="lines"></div> Органический тростниковый сахар</h2>
+					<div>
+						<ul>
+							<li>Удаляет омертвевшие клетки</li>
+							<li>Очищает засоренные споры</li>
+							<li>Увлажняет кожу</li>
+							<li>Защищает от токсинов</li>
+						</ul>
+					</div>
+					<h2 onmouseenter="showIngridient('seasalt');"><div class="feature" id="dots"></div> Органическая морская соль</h2>
+					<div>
+						<ul>
+							<li>Лечит прыщи и гнойники</li>
+							<li>Очищает и подсушивает кожу</li>
+							<li>Борется с целлюлитом</li>
+							<li>Натуральный антисептик</li>
+						</ul>
+					</div>
+					<h2 onmouseenter="showIngridient('almondoil');"><div class="feature" id="lines"></div> Органическое масло миндаля</h2>
+					<div>
+						<ul>
+							<li>Способствует улучшению цвета лица</li>
+							<li>Разглаживает неглубокие морщинки</li>
+							<li>Смягчает и омолаживает</li>
+							<li>Устраняет растяжки и целлюлит</li>
+						</ul>
+					</div>
+					<h2 onmouseenter="showIngridient('orangeoil');"><div class="feature" id="lines"></div> Масло семян апельсина</h2>
+					<div>
+						<ul>
+							<li>Тонизирует кожу</li>
+							<li>Способствует обновлению кожи</li>
+							<li>Смягчает огрубевшую кожу</li>
+							<li>Улучшает упругость кожи</li>
+						</ul>
+					</div>
+					<h2 onmouseenter="showIngridient('orangepeeloil');"><div class="feature" id="dots"></div> Масло кожуры апельсина</h2>
+					<div>
+						<ul>
+							<li>Нормализует жирность кожи</li>
+							<li>Делает кожу упругой и гладкой</li>
+							<li>Снимает мышечное напряжение</li>
+							<li>Обладает отбеливающим свойством</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ingridient"></div>
+			</div>
+		</div>
+		<div class="vertical-line"></div>
+		<div class="slide-two">
+			<div class="social">
+				<a href="#" class="icon" id="vk"></a>
+				<a href="#" class="icon" id="fb"></a>
+				<a href="#" class="icon" id="insta"></a>
+			</div>
+			<div class="about">
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/one.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/one.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/two.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/two.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/three.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/three.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/four.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/four.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/five.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/five.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/six.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/six.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/seven.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/seven.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/eight.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/eight.png);"></div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="front">
+						<div class="image" style="background-image: url(/native/cover/nine.png);"></div>
+					</div>
+					<div class="back">
+						<div class="text" style="background-image: url(/native/cover/text/nine.png);"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="horizontal-line"></div>
+	</div>
+</body>
+</html>

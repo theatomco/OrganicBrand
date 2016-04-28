@@ -1,0 +1,272 @@
+/*
+	DESIGNED AT RA REKLAMIST (http://raReklamist.ru/);
+	DEVELOPED BY TAMIK ANDROID / TAMIK LOKYAEV (http://Tamik.ru/);
+*/
+
+.page {
+	position: absolute;
+	width: 3300px;
+	min-height: 100%;
+	transition: width 1.25s ease;
+}
+
+.page > .pattern {
+	display: inline-block;
+	background-image: url(/native/widepattern.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat-y;
+	width: 800px;
+	height: 1000px;
+	vertical-align: middle;
+	transition: margin-left 1s ease;
+}
+
+.page > .slide-one {
+	display: inline-block;
+	width: 1100px;
+	height: 900px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .right-col {
+	display: inline-block;
+	width: 450px;
+	height: 900px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .right-col > .rotatehint {
+	display: block;
+	background-image: url(/native/360deg.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	margin: 10px auto;
+}
+
+.page > .slide-one > .right-col > .product {
+	display: block;
+	width: 400px;
+	height: 700px;
+	margin: 0px auto;
+}
+
+.page > .slide-one > .right-col > .buy {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	background: none;
+	background-image: url(/native/buttonbg.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+	width: 125px;
+	height: 50px;
+	margin: 15px auto;
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	text-indent: 10px;
+}
+
+.page > .slide-one > .right-col > .buy:active {
+	margin-top: 18px;
+}
+
+.page > .slide-one > .left-col {
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 800px;
+	margin-left: 25px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > .features {
+	display: block;
+	margin: 0px auto;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > .features > h2 {
+	margin-top: 35px;
+}
+
+.page > .slide-one > .left-col > .features > h2 > a {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	color: rgba(136, 157, 57, 1);
+	text-decoration: none;
+}
+
+.page > .slide-one > .left-col > .features > h2 > a > .feature {
+	display: inline-block;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 35px;
+	height: 25px;
+	margin-top: -8px;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > .features > h2 > a > .feature#dots {
+	background-image: url(/native/dots.png);
+}
+
+.page > .slide-one > .left-col > .features > h2 > a > .feature#lines {
+	background-image: url(/native/lines.png);
+}
+
+.page > .slide-one > .left-col > .features > div {
+	margin-left: 45px;
+}
+
+.page > .slide-one > .left-col > .features > div > ul {
+	margin-top: 8px;
+}
+
+.page > .slide-one > .left-col > .features > div > ul > li {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	margin-top: 4px;
+	padding-left: 1em;
+	cursor: default;
+	color: rgba(136, 157, 57, 1);
+	text-indent: -0.7em;
+}
+
+.page > .slide-one > .left-col > .features > div > ul > li::before {
+	content: "• ";
+	color: rgba(136, 157, 57, 1);
+}
+
+.page > .slide-one > .left-col > .ingridient {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	background-image: url(/native/ingridients/naturalcoffee.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 550px;
+	height: 300px;
+	margin-top: 100px;
+}
+
+.page > .vertical-line {
+	display: inline-block;
+	background-image: url(/native/vertical.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 700px;
+	margin-left: 100px;
+	margin-right: 100px;
+	vertical-align: middle;
+}
+
+.page > .slide-two {
+	display: inline-block;
+	width: 960px;
+	height: 725px;
+	vertical-align: middle;
+}
+
+.page > .slide-two > .social {
+	margin-top: -65px;
+	margin-bottom: 30px;
+}
+
+.page > .slide-two > .social > .icon {
+	display: inline-block;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: opacity 0.25s ease;
+}
+
+.page > .slide-two > .social > .icon:first-child {
+	margin-left: 0px;
+}
+
+.page > .slide-two > .social > .icon:hover {
+	opacity: 0.9;
+}
+
+.page > .slide-two > .social > .icon#vk {
+	background-image: url(/native/vk.png);
+}
+
+.page > .slide-two > .social > .icon#fb {
+	background-image: url(/native/fb.png);
+}
+
+.page > .slide-two > .social > .icon#insta {
+	background-image: url(/native/insta.png);
+}
+
+.page > .slide-two > .about {
+	display: block;
+	width: 960px;
+}
+
+.page > .slide-two > .about > .card {
+	display: inline-block;
+	font-size: 14px;
+	width: 300px;
+	height: 225px;
+	margin: 8px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.page > .slide-two > .about > .card > .front {
+	background-color: rgba(124, 133, 44, 1);
+}
+
+.page > .slide-two > .about > .card > .front > .image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+.page > .slide-two > .about > .card > .back {
+	background-color: rgba(124, 133, 44, 1);
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
+	word-wrap: break-word;
+}
+
+.page > .slide-two > .about > .card > .back > .text {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 280px;
+	height: 205px;
+	margin: 10px;
+}
+
+.page > .horizontal-line {
+	display: block;
+	background-image: url(/native/horizontal.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: repeat-x;
+	width: 2410px;
+	height: 10px;
+	margin-top: -25px;
+	margin-left: 800px;
+	transition: margin-left 1s ease;
+}

@@ -1,0 +1,46 @@
+CACHE MANIFEST
+# _version 0.9b38
+
+# CACHE:
+	# index.html
+	# /styles/main.css
+	# /styles/load.css
+	# /styles/update.css
+	# /styles/page.css
+	# /styles/payform.css
+	# http://cdn.Tamik.ru/storage/libs/jquery.js
+	# /js/mousewheel.js
+	# /js/collapse.js
+	# /js/flip.js
+	# /js/spritespin.js
+	# /js/main.js
+	# /js/cachecontrol.js
+	# /native/logo.png
+	# /native/widepattern.png
+	# /native/buttonbg.png
+	# /native/360deg.png
+	# /native/dots.png
+	# /native/lines.png
+	# /native/horizontal.png
+	# /native/vertical.png
+	# /native/cover/one.png
+	# /native/cover/two.png
+	# /native/cover/three.png
+	# /native/cover/four.png
+	# /native/cover/five.png
+	# /native/cover/six.png
+	# /native/cover/seven.png
+	# /native/cover/eight.png
+	# /native/cover/nine.png
+	# /native/cover/text/one.png
+	# /native/cover/text/two.png
+	# /native/cover/text/three.png
+	# /native/cover/text/four.png
+	# /native/cover/text/five.png
+	# /native/cover/text/six.png
+	# /native/cover/text/seven.png
+	# /native/cover/text/eight.png
+	# /native/cover/text/nine.png
+
+NETWORK:
+	*
