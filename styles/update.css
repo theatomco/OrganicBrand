@@ -1,6 +1,6 @@
 /*
-	DESIGNED AT RA REKLAMIST (http://raReklamist.ru/);
-	DEVELOPED BY TAMIK (http://Tamik.ru/);
+	DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+	DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
 */
 
 .update {
@@ -28,14 +28,14 @@
 
 .update > .object > h1 {
 	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 36px;
 }
 
 .update > .object > span {
 	display: block;
 	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	margin-top: 15px;
 }
 

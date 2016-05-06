@@ -1,6 +1,6 @@
 /*
-	DESIGNED AT RA REKLAMIST (http://raReklamist.ru/);
-	DEVELOPED BY TAMIK (http://Tamik.ru/);
+	DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+	DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
 */
 
 .loading {
@@ -39,42 +39,15 @@
 	color: rgba(150, 150, 150, 0.5);
 }
 
-/*.loading > .object > .description {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 24px;
-	margin-top: 100px;
-	opacity: 0;
-	transition: all 1s ease;
-}
-
-.loading > .object > .enter {
-	font-family: Helvetica, Arial, sans-serif;
-	background-color: rgba(136, 157, 57, 1);
-	font-size: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	margin-top: 100px;
-	padding: 10px;
-	color: rgba(255, 255, 255, 1);
-	cursor: pointer;
-	opacity: 0;
-	transition: all 1s ease;
-}
-
-.loading > .object > .enter:hover {
-	background-color: rgba(120, 140, 40, 1);
-	transition: background-color 0.5s ease;
-}*/
-
 .loading > .object > .description {
-	background-image: url(/native/intro_description.png);
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	width: 300px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-size: 22px;
+	color: rgba(136, 157, 57, 1);
+	width: 450px;
 	height: 100px;
-	margin: 0px auto;
-	margin-top: 100px;
+	padding-top: 25px;
+	cursor: default;
 	opacity: 0;
 	transition: all 1s ease;
 }

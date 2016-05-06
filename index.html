@@ -2,9 +2,11 @@
 <html manifest="app.mf">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<meta name="author" content="http://raReklamist.ru/">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="author" content="http://Tamik.ru/">
+	<meta name="author" content="Tamik Lokyaev">
+	<meta name="author" content="Faina Samarova">
+	<meta name="copyright" content="Organic Brand">
 	<meta name="robots" content="index, follow">
 	<meta name="description" content="Organic Brand отбирает по всему миру самые качественные ингредиенты и производит натуральную косметику вручную, с теплом и заботой о Вашем теле.">
 	<meta name="keywords" content="organic, органик, натуральная косметика, органическая еда, крафт косметика, ручная косметика, скрабы, скраб, кофе, кофе скраб, кофейный скраб, натуральные масла, масло миндаля, антицеллюлитный скраб">
@@ -26,6 +28,7 @@
 	<script src="/js/spritespin.js"></script>
 	<script src="/js/flip.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="https://web.redhelper.ru/service/main.js?c=organicmsk" id="rhlpscrtg" async></script>
 </head>
 <body>
 	<div class="update">
@@ -39,7 +42,7 @@
 		<div class="object">
 			<div class="logo"></div>
 			<span class="loading-text">Загрузка</span>
-			<div class="description"></div>
+			<div class="description">Organic Brand за натуральную красоту, бережное и осознанное отношение к себе и окружающему нас миру.</div>
 			<button class="enter" onclick="openStore();"></button>
 			<noscript>
 				<div class="badbrowser">Данный браузер не поддерживается.</div>
@@ -50,23 +53,65 @@
 		<div class="fade" onclick="closePayForm();"></div>
 		<div class="list">
 			<div class="close" onclick="closePayForm();"><span>x</span></div>
-			<div class="form">
-				<h1>Идет загрузка.<small>Пожалуйста, подождите.</small></h1>
-			</div>
-			<form action="mail" method="get"></form>
+			<div class="form"></div>
+			<form action="order" method="get">
+				<input type="hidden" name="form" value="pay">
+				<h1>Оформление заказа</h1>
+				<div class="field">
+					<span>Имя</span>
+					<input type="text" name="firstname" placeholder="Иван" required>
+				</div>
+				<div class="field">
+					<span>Фамилия</span>
+					<input type="text" name="lastname" placeholder="Иванов" required>
+				</div>
+				<div class="field">
+					<span>Номер телефона</span>
+					<input type="tel" name="telephone" placeholder="+7 (900) 123 45 67" required>
+				</div>
+				<div class="field">
+					<span>Адрес электронной почты</span>
+					<input type="email" name="email" placeholder="myemail@site.com" required>
+				</div>
+				<div class="field">
+					<span>Количество</span>
+					<input type="number" name="amount" min="1" max="999" value="1" required>
+					<div class="cost">
+						<span>Стоимость</span>
+						<span class="cost">1600</span>
+					</div>
+				</div>
+				<div class="field">
+					<span>Адрес доставки</span>
+					<input type="text" name="address" placeholder="г. Москва, Кутузовский проспект 500, кв. 5, индекс 100001" required>
+				</div>
+				<div class="field delivery">
+					<span>Курьером</span>
+					<input type="radio" id="courier" name="delivery" value="courier" checked>
+					<label for="courier"><span></span></label>
+					<span>Почтой</span>
+					<input type="radio" id="post" name="delivery" value="post">
+					<label for="post"><span></span></label>
+				</div>
+				<input type="submit" value="Сделать заказ">
+			</form>
 		</div>
 	</div>
 	<div class="page">
 		<div class="pattern"></div>
 		<div class="slide-one">
 			<div class="right-col">
-				<div class="rotatehint"></div>
-				<div class="product"></div>
+				<div class="product">
+					<span class="arrow up"></span>
+					<div class="viewctrl"></div>
+					<span class="arrow down"></span>
+				</div>
 				<button type="button" class="buy" onclick="showPayForm();">Купить</button>
 			</div>
 			<div class="left-col">
+				<h1>Состав:</h1>
 				<div class="features">
-					<h2 class="open" onmouseenter="showIngridient('naturalcoffee');"><div class="feature" id="dots"></div> Натуральный бразильский кофе</h2>
+					<h2 class="open" onmouseenter="showIngredient('naturalcoffee');"><div class="feature" id="dots"></div> Натуральный бразильский кофе</h2>
 					<div>
 						<ul>
 							<li>Очищает кожу от ороговевших клеток</li>
@@ -75,7 +120,7 @@
 							<li>Улучшает циркуляцию крови</li>
 						</ul>
 					</div>
-					<h2 onmouseenter="showIngridient('canesugar');"><div class="feature" id="lines"></div> Органический тростниковый сахар</h2>
+					<h2 onmouseenter="showIngredient('canesugar');"><div class="feature" id="dots"></div> Органический тростниковый сахар</h2>
 					<div>
 						<ul>
 							<li>Удаляет омертвевшие клетки</li>
@@ -84,7 +129,7 @@
 							<li>Защищает от токсинов</li>
 						</ul>
 					</div>
-					<h2 onmouseenter="showIngridient('seasalt');"><div class="feature" id="dots"></div> Органическая морская соль</h2>
+					<h2 onmouseenter="showIngredient('seasalt');"><div class="feature" id="dots"></div> Органическая морская соль</h2>
 					<div>
 						<ul>
 							<li>Лечит прыщи и гнойники</li>
@@ -93,7 +138,7 @@
 							<li>Натуральный антисептик</li>
 						</ul>
 					</div>
-					<h2 onmouseenter="showIngridient('almondoil');"><div class="feature" id="lines"></div> Органическое масло миндаля</h2>
+					<h2 onmouseenter="showIngredient('almondoil');"><div class="feature" id="lines"></div> Органическое масло миндаля</h2>
 					<div>
 						<ul>
 							<li>Способствует улучшению цвета лица</li>
@@ -102,7 +147,7 @@
 							<li>Устраняет растяжки и целлюлит</li>
 						</ul>
 					</div>
-					<h2 onmouseenter="showIngridient('orangeoil');"><div class="feature" id="lines"></div> Масло семян апельсина</h2>
+					<h2 onmouseenter="showIngredient('orangeoil');"><div class="feature" id="lines"></div> Масло семян апельсина</h2>
 					<div>
 						<ul>
 							<li>Тонизирует кожу</li>
@@ -111,7 +156,7 @@
 							<li>Улучшает упругость кожи</li>
 						</ul>
 					</div>
-					<h2 onmouseenter="showIngridient('orangepeeloil');"><div class="feature" id="dots"></div> Масло кожуры апельсина</h2>
+					<h2 onmouseenter="showIngredient('orangepeeloil');"><div class="feature" id="lines"></div> Масло кожуры апельсина</h2>
 					<div>
 						<ul>
 							<li>Нормализует жирность кожи</li>
@@ -121,16 +166,12 @@
 						</ul>
 					</div>
 				</div>
-				<div class="ingridient"></div>
+				<div class="ingredient"></div>
 			</div>
 		</div>
 		<div class="vertical-line"></div>
 		<div class="slide-two">
-			<div class="social">
-				<a href="http://vk.com/" class="icon" id="vk" target="_blank"></a>
-				<a href="http://fb.com/" class="icon" id="fb" target="_blank"></a>
-				<a href="http://instagram.com/" class="icon" id="insta" target="_blank"></a>
-			</div>
+			<h1>Полезно знать:</h1>
 			<div class="about">
 				<div class="card">
 					<div class="front">
@@ -206,7 +247,25 @@
 				</div>
 			</div>
 		</div>
+		<div class="vertical-line inverted"></div>
+		<div class="slide-three">
+			<div class="social">
+				<a href="http://fb.com/organicbrand" class="icon" id="fb" target="_blank"></a>
+				<a href="http://instagram.com/organicbrand" class="icon" id="insta" target="_blank"></a>
+			</div>
+			<div class="about"></div>
+			<div class="about_description"></div>
+		</div>
+		<div class="pattern inverted"></div>
 		<div class="horizontal-line"></div>
+		<div class="copyright"></div>
 	</div>
+	<!--
+		DEVELOP TEAM:
+			DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+			DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
+
+		COPYRIGHT ORGANIC BRAND 2016 ALL RIGHTS RESERVED.
+	-->
 </body>
 </html>

@@ -1,30 +1,33 @@
 /*
-	DESIGNED AT RA REKLAMIST (http://raReklamist.ru/);
-	DEVELOPED BY TAMIK ANDROID / TAMIK LOKYAEV (http://Tamik.ru/);
+	DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+	DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
 */
 
 .page {
 	position: absolute;
-	width: 3300px;
+	width: 4758px;
 	min-height: 100%;
 	transition: width 1.25s ease;
 }
 
 .page > .pattern {
 	display: inline-block;
-	background-image: url(/native/widepattern.png);
+	background-image: url(/native/pattern.png);
 	background-size: cover;
-	background-position: center;
+	background-position: right;
 	background-repeat: repeat-y;
-	width: 800px;
+	width: 600px;
 	height: 1000px;
 	vertical-align: middle;
-	transition: margin-left 1s ease;
+}
+
+.page > .pattern.inverted {
+	background-image: url(/native/pattern_inv.png);
 }
 
 .page > .slide-one {
 	display: inline-block;
-	width: 1100px;
+	width: 1200px;
 	height: 900px;
 	vertical-align: middle;
 }
@@ -36,44 +39,56 @@
 	vertical-align: middle;
 }
 
-.page > .slide-one > .right-col > .rotatehint {
+.page > .slide-one > .right-col > .product {
 	display: block;
-	background-image: url(/native/360deg.png);
+	width: 500px;
+	height: 780px;
+}
+
+.page > .slide-one > .right-col > .product > .arrow {
+	display: inline-block;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	width: 50px;
-	height: 50px;
-	margin: 10px auto;
+	width: 22px;
+	height: 700px;
+	vertical-align: middle;
 }
 
-.page > .slide-one > .right-col > .product {
-	display: block;
-	width: 400px;
-	height: 700px;
-	margin: 0px auto;
+.page > .slide-one > .right-col > .product > .arrow.up {
+	background-image: url(/native/up.png);
+}
+
+.page > .slide-one > .right-col > .product > .arrow.down {
+	background-image: url(/native/down.png);
+}
+
+.page > .slide-one > .right-col > .product > .viewctrl {
+	display: inline-block;
+	cursor: ew-resize;
+	vertical-align: middle;
 }
 
 .page > .slide-one > .right-col > .buy {
 	display: block;
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 20px;
+	font-weight: 600;
 	background: none;
 	background-image: url(/native/buttonbg.png);
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	border: none;
-	width: 125px;
-	height: 50px;
-	margin: 15px auto;
+	width: 160px;
+	height: 60px;
+	margin: 0px auto;
 	color: rgba(255, 255, 255, 1);
 	cursor: pointer;
 	text-indent: 10px;
 }
 
 .page > .slide-one > .right-col > .buy:active {
-	margin-top: 18px;
+	margin-top: 2px;
 }
 
 .page > .slide-one > .left-col {
@@ -81,8 +96,15 @@
 	display: inline-block;
 	width: 500px;
 	height: 800px;
-	margin-left: 25px;
+	margin-left: 100px;
 	vertical-align: middle;
+}
+
+.page > .slide-one > .left-col > h1 {
+	font-family: "Newton", Georgia, serif;
+	margin-bottom: -10px;
+	color: rgba(66, 45, 3, 1);
+	cursor: default;
 }
 
 .page > .slide-one > .left-col > .features {
@@ -132,7 +154,7 @@
 
 .page > .slide-one > .left-col > .features > div > ul > li {
 	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	margin-top: 4px;
 	padding-left: 1em;
 	cursor: default;
@@ -145,15 +167,12 @@
 	color: rgba(136, 157, 57, 1);
 }
 
-.page > .slide-one > .left-col > .ingridient {
+.page > .slide-one > .left-col > .ingredient {
 	display: block;
 	position: absolute;
 	bottom: 0px;
-	/*background-image: url(/native/ingridients/naturalcoffee.png);*/
-	background-image: url(/native/ingridients.png);
-	/*background-size: contain;*/
+	background-image: url(/native/ingredients.png);
 	background-size: cover;
-	/*background-position: center;*/
 	background-position: 0px -600px;
 	background-repeat: no-repeat;
 	width: 550px;
@@ -165,12 +184,16 @@
 	display: inline-block;
 	background-image: url(/native/vertical.png);
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	width: 50px;
-	height: 700px;
+	height: 725px;
 	margin-left: 100px;
 	margin-right: 100px;
 	vertical-align: middle;
+}
+
+.page > .vertical-line.inverted {
+	background-image: url(/native/vertical_inv.png);
 }
 
 .page > .slide-two {
@@ -180,42 +203,13 @@
 	vertical-align: middle;
 }
 
-.page > .slide-two > .social {
-	margin-top: -65px;
-	margin-bottom: 30px;
-}
-
-.page > .slide-two > .social > .icon {
-	display: inline-block;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-radius: 100%;
-	width: 40px;
-	height: 40px;
-	margin-left: 10px;
-	cursor: pointer;
-	transition: opacity 0.25s ease;
-}
-
-.page > .slide-two > .social > .icon:first-child {
-	margin-left: 0px;
-}
-
-.page > .slide-two > .social > .icon:hover {
-	opacity: 0.9;
-}
-
-.page > .slide-two > .social > .icon#vk {
-	background-image: url(/native/vk.png);
-}
-
-.page > .slide-two > .social > .icon#fb {
-	background-image: url(/native/fb.png);
-}
-
-.page > .slide-two > .social > .icon#insta {
-	background-image: url(/native/insta.png);
+.page > .slide-two > h1 {
+	font-family: "Newton", Georgia, serif;
+	margin-top: -40px;
+	margin-left: 4px;
+	margin-bottom: 10px;
+	color: rgba(66, 45, 3, 1);
+	cursor: default;
 }
 
 .page > .slide-two > .about {
@@ -248,8 +242,6 @@
 .page > .slide-two > .about > .card > .back {
 	background-color: rgba(124, 133, 44, 1);
 	color: rgba(255, 255, 255, 1);
-	text-align: left;
-	word-wrap: break-word;
 }
 
 .page > .slide-two > .about > .card > .back > .text {
@@ -261,15 +253,233 @@
 	margin: 10px;
 }
 
+.page > .slide-three {
+	display: inline-block;
+	width: 860px;
+	height: 725px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.page > .slide-three > .social {
+	margin-top: -35px;
+	margin-bottom: 10px;
+}
+
+.page > .slide-three > .social > .icon {
+	display: inline-block;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: opacity 0.25s ease;
+}
+
+.page > .slide-three > .social > .icon:first-child {
+	margin-left: 0px;
+}
+
+.page > .slide-three > .social > .icon:hover {
+	opacity: 0.9;
+}
+
+.page > .slide-three > .social > .icon#fb {
+	background-image: url(/native/fb.png);
+}
+
+.page > .slide-three > .social > .icon#insta {
+	background-image: url(/native/insta.png);
+}
+
+.page > .slide-three > .about {
+	display: inline-block;
+	background-image: url(/native/about.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 275px;
+	height: 700px;
+	vertical-align: middle;
+}
+
+.page > .slide-three > .about_description {
+	display: inline-block;
+	background-image: url(/native/description.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 600px;
+	margin-left: 100px;
+	vertical-align: middle;
+}
+
 .page > .horizontal-line {
 	display: block;
 	background-image: url(/native/horizontal.png);
 	background-size: contain;
 	background-position: center;
 	background-repeat: repeat-x;
-	width: 2410px;
+	width: 3500px;
 	height: 10px;
 	margin-top: -25px;
-	margin-left: 800px;
-	transition: margin-left 1s ease;
+	margin-left: 600px;
+}
+
+.page > .copyright {
+	position: relative;
+	background-color: rgba(255, 255, 255, 1);
+	background-image: url(/native/copyright.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 15px;
+	margin-top: -15px;
+	margin-left: 3725px;
+}
+
+@media(max-height: 860px) {
+	.page {
+		width: 3998px;
+	}
+
+	.page > .pattern {
+		width: 500px;
+	}
+
+	.page > .slide-one {
+		width: 1000px;
+		height: 700px;
+	}
+
+	.page > .slide-one > .right-col {
+		width: 414px;
+		height: 700px;
+	}
+
+	.page > .slide-one > .right-col > .product {
+		width: 414px;
+		height: 640px;
+		margin-top: -10px;
+	}
+
+	.page > .slide-one > .right-col > .product > .arrow {
+		height: 640px;
+	}
+
+	.page > .slide-one > .right-col > .buy {
+		margin-top: -10px;
+	}
+
+	.page > .slide-one > .right-col > .buy:active {
+		margin-top: -8px;
+	}
+
+	.page > .slide-one > .left-col {
+		height: 700px;
+		margin-left: 60px;
+	}
+
+	.page > .slide-one > .left-col > h1 {
+		font-size: 28px;
+	}
+
+	.page > .slide-one > .left-col > .features > h2 {
+		margin-top: 26px;
+	}
+
+	.page > .slide-one > .left-col > .features > h2 > a {
+		font-size: 22px;
+	}
+
+	.page > .slide-one > .left-col > .features > h2 > a > .feature {
+		width: 30px;
+		height: 20px;
+		margin-top: -8px;
+		margin-right: 8px;
+	}
+
+	.page > .slide-one > .left-col > .features > div > ul {
+		margin-top: 6px;
+	}
+
+	.page > .slide-one > .left-col > .ingredient {
+		bottom: 20px;
+		background-image: url(/native/ingredients_low.png);
+		background-position: 0px -480px;
+		width: 500px;
+		height: 240px;
+	}
+
+	.page > .vertical-line {
+		background-size: contain;
+		height: 620px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	.page > .slide-two {
+		width: 860px;
+		height: 700px;
+	}
+
+	.page > .slide-two > h1 {
+		font-size: 28px;
+		margin-top: 0px;
+		margin-bottom: 2px;
+	}
+
+	.page > .slide-two > .about {
+		display: block;
+		width: 960px;
+	}
+
+	.page > .slide-two > .about > .card {
+		width: 260px;
+		height: 195px;
+		margin: 8px;
+	}
+
+	.page > .slide-two > .about > .card > .back > .text {
+		width: 240px;
+		height: 176px;
+		margin: 10px;
+	}
+
+	.page > .slide-three {
+		width: 800px;
+		height: 700px;
+		margin-left: 10px;
+	}
+
+	.page > .slide-three > .social {
+		margin-top: 0px;
+	}
+
+	.page > .slide-three > .about {
+		height: 620px;
+	}
+
+	.page > .slide-three > .about_description {
+		margin-top: 20px;
+		margin-left: 50px;
+	}
+
+	.page > .horizontal-line {
+		width: 2930px;
+		height: 8px;
+		margin-top: -20px;
+		margin-left: 500px;
+	}
+
+	.page > .copyright {
+		height: 14px;
+		margin-top: -12px;
+		margin-left: 3080px;
+	}
 }

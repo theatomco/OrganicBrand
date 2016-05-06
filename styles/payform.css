@@ -1,9 +1,7 @@
 /*
-	DESIGNED AT RA REKLAMIST (http://raReklamist.ru/);
-	DEVELOPED BY TAMIK (http://Tamik.ru/);
+	DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+	DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
 */
-
-.payform {}
 
 .payform > .fade {
 	display: none;
@@ -20,9 +18,9 @@
 	left: 50%;
 	bottom: -1000px;
 	width: 100%;
-	max-width: 800px;
+	max-width: 572px;
 	height: 800px;
-	margin-left: -400px;
+	margin-left: -286px;
 	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
 	z-index: 11;
 	transition: bottom 0.5s ease;
@@ -33,8 +31,8 @@
 	font-weight: 100;
 	font-size: 50px;
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 25px;
+	right: 25px;
 	width: 40px;
 	height: 40px;
 	color: rgba(0, 0, 0, 0.5);
@@ -45,6 +43,7 @@
 }
 
 .payform > .list > .form {
+	display: none;
 	position: relative;
 	top: 45%;
 	text-align: center;
@@ -52,8 +51,9 @@
 
 .payform > .list > .form > h1 {
 	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 42px;
+	cursor: default;
 }
 
 .payform > .list > .form > h1 > small {
@@ -66,7 +66,17 @@
 }
 
 .payform > .list > form {
+	display: none;
 	padding: 25px;
+}
+
+form > h1 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 36px;
+	padding-bottom: 25px;
+	text-align: center;
+	cursor: default;
 }
 
 form > .field {
@@ -82,10 +92,12 @@ form > .field > span {
 	margin-left: 10px;
 	margin-bottom: 10px;
 	color: rgba(136, 157, 57, 1);
+	cursor: default;
 }
 
 form > .field.delivery > span {
 	display: inline-block;
+	cursor: default;
 }
 
 form > .field > input {
@@ -98,9 +110,132 @@ form > .field > input {
 	padding: 10px;
 }
 
-form > .field > input[type=radio] {
-	background-color: rgba(255, 255, 255, 1);
+form > .field > input[name=amount] {
+	width: 380px;
+}
+
+form > .field > .cost {
+	margin-top: -30px;
+	float: right;
+}
+
+form > .field > .cost > span {
+	display: block;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: rgba(136, 157, 57, 1);
+	cursor: default;
+}
+
+form > .field > .cost > span.cost {
+	position: relative;
 	border: 1px solid rgba(136, 157, 57, 1);
 	border-radius: 6px;
-	width: 25px;
+	padding: 7px;
+	padding-left: 9px;
+	padding-right: 9px;
+	margin-top: 8px;
+	color: rgba(0, 0, 0, 1);
+	text-align: center;
+}
+
+form > .field > .cost > span.cost::after {
+	font-weight: 400;
+	font-size: 18px;
+	content: " ₽";
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] + label {
+    color: rgba(136, 157, 57, 1);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+input[type=radio] + label span {
+    display: inline-block;
+	border: 2px solid rgba(136, 157, 57, 1);
+	border-radius: 6px;
+    width: 25px;
+    height: 25px;
+    margin-top: -5px;
+	margin-left: 5px;
+    cursor: pointer;
+	vertical-align: middle;
+}
+
+input[type=radio] + label span {
+     background-color: rgba(255, 255, 255, 1);
+}
+
+input[type=radio]:checked + label span {
+     background-color: rgba(136, 157, 57, 1);
+}
+
+input[type=radio] + label span,
+input[type=radio]:checked + label span {
+  transition: background-color 0.25s ease;
+}
+
+form > input[type=submit] {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	background-color: transparent;
+	border: 1px solid rgba(136, 157, 57, 1);
+	border-radius: 6px;
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: rgba(136, 157, 57, 1);
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+form > input[type=submit]:hover {
+	background-color: rgba(136, 157, 57, 1);
+	color: rgba(255, 255, 255, 1);
+}
+
+@media(max-height: 860px) {
+	.payform > .list {
+		height: 700px;
+	}
+
+	.payform > .list > .close {
+		top: 15px;
+		right: 15px;
+	}
+
+	.payform > .list > .form {
+		top: 40%;
+	}
+
+	.payform > .list > .form > h1 {
+		font-size: 38px;
+	}
+
+	.payform > .list > .form > h1 > small {
+		font-size: 28px;
+	}
+
+	.payform > .list > form {
+		padding-top: 15px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 15px;
+	}
+
+	form > h1 {
+		font-size: 34px;
+		padding-bottom: 15px;
+	}
+
+	form > .field {
+		display: block;
+		margin-bottom: 12px;
+	}
 }

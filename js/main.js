@@ -1,3 +1,11 @@
+/*
+	DEVELOP TEAM:
+		DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+		DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
+
+	MAIN APP FILE.
+*/
+
 $(window).load(function() {
 	setTimeout(checkUpdate, 500);
 
@@ -16,11 +24,6 @@ $(window).load(function() {
 	setTimeout(function() {
 		$(".enter").css({"opacity":"1","margin-top":"25px"});
 	}, 3000);
-
-	var debug = '<div class="debug"></div>';
-	$("body").append(debug);
-	$(".debug").css({"display":"block", "position":"fixed", "top":"25px","left":"25px", "z-index":1000, "background-color":"white", "padding":"15px", "box-shadow":"0px 0px 25px black"});
-	$(".debug").html($(window).width() + "x" + $(window).height());
 });
 
 $(document).ready(function() {
@@ -43,7 +46,7 @@ $(document).ready(function() {
 
 	$(".pattern").css({"height":$(window).height()});
 
-	$(".product").spritespin({
+	$(".viewctrl").spritespin({
 		source: [
 			"/native/360/1.png",
 			"/native/360/2.png",
@@ -65,15 +68,58 @@ $(document).ready(function() {
 			"/native/360/18.png",
 			"/native/360/19.png",
 			"/native/360/20.png",
-			"/native/360/21.png"
+			"/native/360/21.png",
+			"/native/360/22.png",
+			"/native/360/23.png",
+			"/native/360/24.png",
+			"/native/360/25.png",
+			"/native/360/26.png",
+			"/native/360/27.png",
+			"/native/360/28.png",
+			"/native/360/29.png",
+			"/native/360/30.png",
+			"/native/360/31.png",
+			"/native/360/32.png",
+			"/native/360/33.png"
 		],
-		width: 400,
-		height: 700,
+		width: 440,
+		height: 780,
 		animate: false,
-		preloadCount: 21
+		preloadCount: 33
 	});
 
-	localStorage.setItem("ingridient", "naturalcoffee");
+	if($(window).height() <= 860) {
+		$(".viewctrl").spritespin({
+			width: 360,
+			height: 640
+		});
+	}
+
+	$("form[action=order]").submit(function(event) {
+		event.preventDefault();
+		$(".payform > .list > .form").html("<h1>Обработка.<small>Пожалуйста, подождите.</small></h1>");
+		$(".payform > .list > .form").css({"display":"block"});
+		$(".payform > .list > form").css({"display":"none"});
+		pay();
+	});
+
+	$("input[name=amount]").change(function() {
+		var cost = $(this).val() * 1600;
+		$(".cost > span.cost").text(cost);
+	});
+
+	localStorage.setItem("ingredient", "naturalcoffee");
+});
+
+$(window).resize(function() {
+	$(".pattern").css({"height":$(window).height()});
+
+	if($(window).height() <= 860) {
+		$(".viewctrl").spritespin({
+			width: 360,
+			height: 640
+		});
+	}
 });
 
 function showUpdate() {
@@ -89,7 +135,7 @@ function checkUpdate() {
 
 function installUpdate() {
 	window.applicationCache.swapCache();
-	localStorage.setItem("version", "0.9b26");
+	localStorage.setItem("version", "1.0");
 	location.reload();
 }
 
@@ -97,74 +143,93 @@ function openStore() {
 	$(".loading").fadeOut(500);
 }
 
-function changeIngridient(value) {
-	$(".ingridient").fadeOut(150);
+function changeIngredient(value) {
+	$(".ingredient").fadeOut(150);
 
 	setTimeout(function() {
-		switch(value) {
-			case "almondoil": $(".ingridient").css({"background-position":"0px 0px"})
-			break;
-			case "canesugar": $(".ingridient").css({"background-position":"0px -300px"})
-			break;
-			case "naturalcoffee": $(".ingridient").css({"background-position":"0px -600px"})
-			break;
-			case "orangeoil": $(".ingridient").css({"background-position":"0px -900px"})
-			break;
-			case "orangepeeloil": $(".ingridient").css({"background-position":"0px -1200px"})
-			break;
-			case "seasalt": $(".ingridient").css({"background-position":"0px -1500px"})
-			break;
-			default: $(".ingridient").css({"background-position":"0px -600px"})
-			break;
+		if($(window).height() <= 860) {
+			switch(value) {
+				case "almondoil": $(".ingredient").css({"background-position":"0px 0px"})
+				break;
+				case "canesugar": $(".ingredient").css({"background-position":"0px -240px"})
+				break;
+				case "naturalcoffee": $(".ingredient").css({"background-position":"0px -480px"})
+				break;
+				case "orangeoil": $(".ingredient").css({"background-position":"0px -720px"})
+				break;
+				case "orangepeeloil": $(".ingredient").css({"background-position":"0px -960px"})
+				break;
+				case "seasalt": $(".ingredient").css({"background-position":"0px -1200px"})
+				break;
+				default: $(".ingredient").css({"background-position":"0px -480px"})
+				break;
+			}
+		}
+		else
+		{
+			switch(value) {
+				case "almondoil": $(".ingredient").css({"background-position":"0px 0px"})
+				break;
+				case "canesugar": $(".ingredient").css({"background-position":"0px -300px"})
+				break;
+				case "naturalcoffee": $(".ingredient").css({"background-position":"0px -600px"})
+				break;
+				case "orangeoil": $(".ingredient").css({"background-position":"0px -900px"})
+				break;
+				case "orangepeeloil": $(".ingredient").css({"background-position":"0px -1200px"})
+				break;
+				case "seasalt": $(".ingredient").css({"background-position":"0px -1500px"})
+				break;
+				default: $(".ingredient").css({"background-position":"0px -600px"})
+				break;
+			}
 		}
 	}, 175);
 
 	setTimeout(function() {
-		$(".ingridient").fadeIn(150);
+		$(".ingredient").fadeIn(150);
 	}, 200);
 }
 
-function showIngridient(value) {
-	var item = localStorage.getItem("ingridient");
+function showIngredient(value) {
+	var item = localStorage.getItem("ingredient");
 	if(value != item) {
-		changeIngridient(value);
-		localStorage.setItem("ingridient", value);
+		changeIngredient(value);
+		localStorage.setItem("ingredient", value);
 	}
 }
 
 function showPayForm() {
 	$(".payform > .fade").fadeIn(500);
 	$(".payform > .list").css({"bottom":"0px"});
-
-	$.ajax({
-		url: "payform.html",
-		cache: false,
-		error: function() {
-			$(".payform > .list > .form").html("<h1>Невозможно связаться с сервером.<small>Проверьте подключение.</small></h1>");
-		},
-		success: function(data) {
-			$(".payform > .list > form").html(data);
-		}
-	});
+	$(".payform > .list > form").css({"display":"block"});
 }
 
 function closePayForm() {
 	$(".payform > .fade").fadeOut(500);
 	$(".payform > .list").css({"bottom":"-1000px"});
+	setTimeout(function() {
+		$(".payform > .list > .form").html("");
+		$(".payform > .list > .form").css({"display":"none"});
+		$(".payform > .list > form").css({"display":"block"});
+	},500);
 }
 
 function pay() {
 	$.ajax({
-		url: "mail.php",
+		url: "order.php",
 		type: "GET",
 		data: "form=" + $("input[name=form]").val() + "&firstname=" + $("input[name=firstname]").val() + "&lastname=" + $("input[name=lastname]").val() + "&telephone=" + $("input[name=telephone]").val() + "&email=" + $("input[name=email]").val() + "&amount=" + $("input[name=amount]").val() + "&address=" + $("input[name=address]").val() + "&delivery=" + $("input[name=delivery]").val(),
 		error: function() {
-			alert("ошибка\n");
+			alert("Произошла ошибка. Попробуйте снова.");
+			$(".payform > .list > .form").html("");
+			$(".payform > .list > .form").css({"display":"none"});
+			$(".payform > .list > form").css({"display":"block"});
 		},
 		success: function(data) {
-			alert("оплачено\n" + data);
+			$(".payform > .list > .form").html("<h1>Ваш заказ принят.<small>Наш менеджер свяжется с Вами по указанному телефону.</small></h1>");
+			$(".payform > .list > .form").css({"display":"block"});
+			$(".payform > .list > form").css({"display":"none"});
 		}
 	});
-	var data = "form=" + $("input[name=form]").val() + "&firstname=" + $("input[name=firstname]").val() + "&lastname=" + $("input[name=lastname]").val() + "&telephone=" + $("input[name=telephone]").val() + "&email=" + $("input[name=email]").val() + "&amount=" + $("input[name=amount]").val() + "&address=" + $("input[name=address]").val() + "&delivery=" + $("input[name=delivery]").val();
-	console.log(data);
 }
