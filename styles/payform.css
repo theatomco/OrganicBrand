@@ -95,9 +95,24 @@ form > .field > span {
 	cursor: default;
 }
 
+form > .field.delivery {
+	display: inline-block;
+	width: 290px;
+}
+
 form > .field.delivery > span {
 	display: inline-block;
 	cursor: default;
+}
+
+form > .field.promo {
+	display: inline-block;
+	width: 170px;
+	margin-left: 05px;
+}
+
+form > .field.promo > input {
+	width: 200px;
 }
 
 form > .field > input {
@@ -124,6 +139,7 @@ form > .field > .cost > span {
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 600;
 	font-size: 20px;
+	height: 23px;
 	color: rgba(136, 157, 57, 1);
 	cursor: default;
 }
@@ -135,7 +151,8 @@ form > .field > .cost > span.cost {
 	padding: 7px;
 	padding-left: 9px;
 	padding-right: 9px;
-	margin-top: 8px;
+	height: 25px;
+	margin-top: 6px;
 	color: rgba(0, 0, 0, 1);
 	text-align: center;
 }

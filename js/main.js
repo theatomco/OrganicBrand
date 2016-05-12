@@ -46,6 +46,10 @@ $(document).ready(function() {
 
 	$(".pattern").css({"height":$(window).height()});
 
+	if(device.mobile()) {
+		$(".loading").css({"display":"none"});
+	}
+
 	$(".viewctrl").spritespin({
 		source: [
 			"/native/360/1.png",
@@ -103,12 +107,22 @@ $(document).ready(function() {
 		pay();
 	});
 
+	$("input[name=promo]").keyup(function() {
+		setTimeout(checkPromo, 250);
+	});
+
+	$("input[name=promo]").blur(function() {
+		setTimeout(checkPromo, 250);
+	});
+
 	$("input[name=amount]").change(function() {
-		var cost = $(this).val() * 1600;
+		var cost = (localStorage.getItem("cost") * $(this).val()) * (1 - localStorage.getItem("promocost"));
 		$(".cost > span.cost").text(cost);
 	});
 
 	localStorage.setItem("ingredient", "naturalcoffee");
+	localStorage.setItem("cost", 1600);
+	localStorage.setItem("promocost", 0);
 });
 
 $(window).resize(function() {
@@ -135,7 +149,7 @@ function checkUpdate() {
 
 function installUpdate() {
 	window.applicationCache.swapCache();
-	localStorage.setItem("version", "1.0");
+	localStorage.setItem("version", "1.0.1");
 	location.reload();
 }
 
@@ -203,6 +217,7 @@ function showPayForm() {
 	$(".payform > .fade").fadeIn(500);
 	$(".payform > .list").css({"bottom":"0px"});
 	$(".payform > .list > form").css({"display":"block"});
+	$("input[name=firstname]").focus();
 }
 
 function closePayForm() {
@@ -215,11 +230,37 @@ function closePayForm() {
 	},500);
 }
 
+function checkPromo() {
+	$.ajax({
+		url: "promo.php",
+		type: "GET",
+		data: "promo=true&code=" + $("input[name=promo]").val().toUpperCase(),
+		success: function(data) {
+			if(data == "true 5") {
+				var promocost = (localStorage.getItem("cost") * $("input[name=amount]").val()) * (1 - localStorage.getItem("promocost"));
+				$(".cost > span.cost").text(promocost);
+				localStorage.setItem("promocost", 0.05);
+			}
+			else if(data == "true 10") {
+				var promocost = (localStorage.getItem("cost") * $("input[name=amount]").val()) * (1 - localStorage.getItem("promocost"));
+				$(".cost > span.cost").text(promocost);
+				localStorage.setItem("promocost", 0.10);
+			}
+			else
+			{
+				var promocost = (localStorage.getItem("cost") * $("input[name=amount]").val()) * (1 - localStorage.getItem("promocost"));
+				$(".cost > span.cost").text(promocost);
+				localStorage.setItem("promocost", 0);
+			}
+		}
+	});
+}
+
 function pay() {
 	$.ajax({
 		url: "order.php",
 		type: "GET",
-		data: "form=" + $("input[name=form]").val() + "&firstname=" + $("input[name=firstname]").val() + "&lastname=" + $("input[name=lastname]").val() + "&telephone=" + $("input[name=telephone]").val() + "&email=" + $("input[name=email]").val() + "&amount=" + $("input[name=amount]").val() + "&address=" + $("input[name=address]").val() + "&delivery=" + $("input[name=delivery]").val(),
+		data: "form=" + $("input[name=form]").val() + "&firstname=" + $("input[name=firstname]").val() + "&lastname=" + $("input[name=lastname]").val() + "&telephone=" + $("input[name=telephone]").val() + "&email=" + $("input[name=email]").val() + "&amount=" + $("input[name=amount]").val() + "&address=" + $("input[name=address]").val() + "&delivery=" + $("input[name=delivery]:checked").val() + "&promo=" + $("input[name=promo]").val().toUpperCase(),
 		error: function() {
 			alert("Произошла ошибка. Попробуйте снова.");
 			$(".payform > .list > .form").html("");
