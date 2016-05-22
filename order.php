@@ -1,5 +1,10 @@
 <?php
-	if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['form'] == 'pay') {
+	function validateEmail($email)
+	{
+	   $pattern = '/^([0-9a-z]([-.\w]*[0-9a-z])*@(([0-9a-z])+([-\w]*[0-9a-z])*\.)+[a-z]{2,6})$/i';
+	   return preg_match($pattern, $email);
+	}
+	if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['form'] == 'pay' && $_GET['firstname'] && $_GET['lastname'] && $_GET['telephone'] && $_GET['email'] && $_GET['amount'] && $_GET['delivery'] && $_GET['address']) {
 		$cost = 1600;
 		//
 		if($_GET['delivery'] == "courier") {
@@ -15,22 +20,14 @@
 		//
 		if(isset($_GET['promo'])) {
 			switch($_GET['promo']) {
-				case "FACELAB":
-					$promo = "5%";
-					$promocost = ($cost * $_GET['amount']) * (1-0.05);
-					break;
-				case "ORGANICMSK":
-					$promo = "5%";
-					$promocost = ($cost * $_GET['amount']) * (1-0.05);
-					break;
-				case "NATURE":
-					$promo = "5%";
-					$promocost = ($cost * $_GET['amount']) * (1-0.05);
-					break;
 				case "REDISH":
 					$promo = "10%";
 					$promocost = ($cost * $_GET['amount']) * (1-0.10);
 					break;
+				case "FACELAB":
+				case "ORGANICMSK":
+				case "NATURE":
+				case "NAILLAB":
 				case "ORG111":
 				case "ORG112":
 				case "ORG113":
@@ -76,11 +73,16 @@
 		$manager_message .= "К оплате: ".$promocost." ₽\r\n";
 		$manager_header = "From: ".$_GET['firstname']." ".$_GET['lastname']." <".$_GET['email'].">\n";
 		$manager_header .= "Reply-To: ".$_GET['email'];
-		if(mail($_GET['email'], $subject, $message, $header)) {
-			echo "Send.<br>";
+		if(validateEmail($_GET['email'])) {
+			if(mail($_GET['email'], $subject, $message, $header)) {
+				echo "Send.<br>";
+			}
+			if(mail($manager, $manager_subject, $manager_message, $manager_header)) {
+				echo "Send.<br>";
+			}
 		}
-		if(mail($manager, $manager_subject, $manager_message, $manager_header)) {
-			echo "Send.<br>";
+		else {
+			echo "Access denied. Invalied E-mail.";
 		}
 	}
 	else

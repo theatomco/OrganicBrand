@@ -1,18 +1,13 @@
 <?php
 	if($_GET["promo"] == "true" && isset($_GET["code"])) {
-		switch($_GET["code"]) {
-			case "FACELAB":
-				echo "true 5";
-				break;
-			case "ORGANICMSK":
-				echo "true 5";
-				break;
-			case "NATURE":
-				echo "true 5";
-				break;
+		switch($_GET['code']) {
 			case "REDISH":
 				echo "true 10";
 				break;
+			case "FACELAB":
+			case "ORGANICMSK":
+			case "NATURE":
+			case "NAILLAB":
 			case "ORG111":
 			case "ORG112":
 			case "ORG113":
@@ -26,7 +21,7 @@
 				echo "true 5";
 				break;
 			default:
-				echo "error";
+				echo "Access denied.";
 				break;
 		}
 	}
