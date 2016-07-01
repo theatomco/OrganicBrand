@@ -8,6 +8,18 @@
 			case "ORGANICMSK":
 			case "NATURE":
 			case "NAILLAB":
+			case "SKRASOTY":
+			case "MANTRA":
+			case "1106":
+			case "EAWE":
+			case "F-AVENUE":
+			case "INMODO":
+			case "MROSSO":
+			case "KRASSULA":
+			case "UGORIA":
+			case "SKANNA":
+			case "MOSKVICHKASALON":
+			case "MBEAUTY":
 			case "ORG111":
 			case "ORG112":
 			case "ORG113":

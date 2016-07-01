@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html manifest="app.mf">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=1.0, user-scalable=no">
+	<meta name="author" content="http://Tamik.ru/">
+	<meta name="copyright" content="Organic Brand">
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="Organic Brand отбирает по всему миру самые качественные ингредиенты и производит натуральную косметику вручную, с теплом и заботой о Вашем теле.">
+	<meta name="keywords" content="organic, органик, натуральная косметика, органическая еда, крафт косметика, ручная косметика, скрабы, скраб, кофе, кофе скраб, кофейный скраб, натуральные масла, масло миндаля, антицеллюлитный скраб">
+	<meta property="og:site_name" content="Organic Brand">
+	<meta property="og:description" content="Мы отбираем по всему миру самые качественные ингредиенты и производим натуральную косметику вручную, с теплом и заботой о Вашем теле.">
+	<meta property="og:image" content="/native/og_image.png">
+	<meta property="og:url" content="http://OrganicBrand.ru/">
+	<meta name="theme-color" content="#7C852C">
+	<title>Оформление заказа &ndash; Organic Brand</title>
+	<link rel="icon" href="/native/favicon.ico">
+	<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+	<div class="payform mobile">
+		<div class="list">
+			<div class="close" onclick="closePayForm();"><span>x</span></div>
+			<div class="form">
+				<h1>Ваш заказ принят.<small>Наш менеджер свяжется с Вами по указанному телефону.</small></h1>
+			</div>
+			<form action="order" method="get">
+				<input type="hidden" name="form" value="pay">
+				<h1>Оформление заказа</h1>
+				<div class="field">
+					<span>Имя</span>
+					<input type="text" name="firstname" required>
+				</div>
+				<div class="field">
+					<span>Фамилия</span>
+					<input type="text" name="lastname" required>
+				</div>
+				<div class="field">
+					<span>Номер телефона</span>
+					<input type="tel" name="telephone" required>
+				</div>
+				<div class="field">
+					<span>Адрес электронной почты</span>
+					<input type="email" name="email" required>
+				</div>
+				<div class="field">
+					<span>Количество</span>
+					<span class="right">Стоимость</span>
+					<input type="number" name="amount" min="1" value="1" required>
+					<div class="value" id="costValue">1600</div>
+				</div>
+				<div class="field">
+					<span>Адрес доставки</span>
+					<input type="text" name="address" required>
+				</div>
+				<div class="field delivery">
+					<span>Курьером</span>
+					<input type="radio" id="courier" name="delivery" value="courier" checked>
+					<label for="courier"><span></span></label>
+					<span>Почтой</span>
+					<input type="radio" id="post" name="delivery" value="post">
+					<label for="post"><span></span></label>
+				</div>
+				<div class="field promo">
+					<input type="text" name="promo">
+				</div>
+				<input type="submit" value="Сделать заказ">
+			</form>
+		</div>
+	</div>
+	<script src="http://cdn.Tamik.ru/storage/libs/jquery.js"></script>
+	<script src="http://cdn.Tamik.ru/storage/libs/device.js"></script>
+	<script src="/js/watermark.js"></script>
+	<script src="/js/mask.js"></script>
+	<script src="/js/mainOrder.js"></script>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-74966228-4', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<!--
+		DEVELOP TEAM:
+			DESIGNED BY FAINA SAMAROVA (http://vk.com/id232842027 | faina.arsenovna@mail.ru);
+			DEVELOPED BY TAMIK LOKYAEV (http://Tamik.ru/ | hello@Tamik.ru);
+
+		COPYRIGHT ORGANIC BRAND 2016 ALL RIGHTS RESERVED.
+	-->
+</body>
+</html>
