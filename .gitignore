@@ -40,4 +40,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-_res/
+node_modules/
+public/
+build/
